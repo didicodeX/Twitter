@@ -1,0 +1,43 @@
+/* .topbar {
+  height: 50px;
+  background: red;
+}
+
+.topbar  {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blanchedalmond;
+}
+
+.topbar  .logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.topbar  .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar  .right button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.topbar  .right button.login {
+  background-color: white;
+  color: red; 
+}
+
+.topbar  .right button.register {
+  background-color: red;  
+  color: white;
+}
+ */
