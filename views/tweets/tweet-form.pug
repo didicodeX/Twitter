@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 Tweet Form
+  div(class="d-flex flex-row content b1 mx-auto")
+    div(class="profile-container b2") 
+      include ../includes/profile.pug
+    div(class="flex-fill b2")
+      form(class="card" action="/api/tweet" method="POST")
+        div(class="card-header")
+          h5(class="card-title") Tweet
+        div(class="card-body")
+          textarea(class="form-control" name="content" placeholder="Tweet content")
+        div(class="card-footer d-flex justify-content-end gap-2")
+          button(class="btn btn-primary" type="submit") Tweet
+          button(class="btn btn-danger" type="button") Cancel
