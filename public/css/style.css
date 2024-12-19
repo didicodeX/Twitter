@@ -1,43 +1,25 @@
-/* .topbar {
-  height: 50px;
-  background: red;
+.content {
+  max-width: 1000px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.topbar  {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: blanchedalmond;
+.profile-container {
+  max-width: 300px;
+  width: 30%;
 }
 
-.topbar  .logo {
-  font-weight: bold;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
+.btn-tweet {
+  color: #fff;
+  background-color: #1da1f2;
+  border-color: #1da1f2;
 }
 
-.topbar  .right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.b1 {
+  border: 1px solid red;
 }
 
-.topbar  .right button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.b2 {
+  border: 1px solid rebeccapurple;
 }
-
-.topbar  .right button.login {
-  background-color: white;
-  color: red; 
-}
-
-.topbar  .right button.register {
-  background-color: red;  
-  color: white;
-}
- */
