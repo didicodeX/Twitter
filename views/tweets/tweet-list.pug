@@ -1,8 +1,16 @@
 extends ../layout.pug
 
 block content
-  h1 Tweets
+  h1 Tweets List
   div(class="d-flex flex-row content b1 mx-auto")
     div(class="profile-container b2") 
       include ../includes/profile.pug
     div(class="flex-fill b2") tweets
+      each tweet, i in tweets
+        div(class="card")
+          div(class="card-header")
+            h5(class="card-title") Tweet #{i + 1}
+          div(class="card-body")
+            p(class="card-text") #{tweet.content}
+          div(class="card-footer d-flex justify-content-end gap-2")
+            a(class="btn btn-primary", href="/tweet/#{tweet._id}") Show
