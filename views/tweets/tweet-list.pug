@@ -1,16 +1,10 @@
-extends ../layout.pug
-
-block content
-  h1 Tweets List
-  div(class="d-flex flex-row content b1 mx-auto")
-    div(class="profile-container b2") 
-      include ../includes/profile.pug
-    div(class="flex-fill b2") tweets
+if tweets
       each tweet, i in tweets
-        div(class="card")
+        div(class="card mb-3")
           div(class="card-header")
             h5(class="card-title") Tweet #{i + 1}
           div(class="card-body")
-            p(class="card-text") #{tweet.content}
+            p(class="card-text" tweetid=tweet._id) #{tweet.content} - #{tweet._id}
           div(class="card-footer d-flex justify-content-end gap-2")
-            a(class="btn btn-primary", href="/tweet/#{tweet._id}") Show
+            a(class="btn btn-primary", href=`/tweets/edit/${tweet._id}`) edit
+            a(class="btn btn-danger ", href=`/tweets/delete/${tweet._id}`)  Delete

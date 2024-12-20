@@ -6,15 +6,18 @@ block content
     div(class="profile-container b2") 
       include ../includes/profile.pug
     div(class="flex-fill b2")
-      form(class="card" action="/api/tweets" method="POST")
+      form(class="card" action= tweet._id ? `/tweets/update/${tweet._id}` : '/tweets' method="POST")
         div(class="card-header")
-          h5(class="card-title") Tweet
+          h5(class="card-title")= tweet._id ? 'Edit Tweet' : 'New Tweet'
         div(class="card-body")
-          textarea(class="form-control" name="content" placeholder="Tweet content")
+          textarea(class="form-control" name="content" placeholder="Tweet content")= tweet.content
         if errors
           ul(class="my-2")
             for error in errors
               li(class="text-danger ") #{error}
         div(class="card-footer d-flex justify-content-end gap-2")
-          button(class="btn btn-primary" type="submit") Tweet
-          button(class="btn btn-danger" type="button") Cancel
+          if tweet._id
+            button(class="btn btn-primary" type="submit") Update Tweet
+          else
+            button(class="btn btn-primary" type="submit") Tweet
+          a(class="btn btn-danger" href="/tweets") Cancel
