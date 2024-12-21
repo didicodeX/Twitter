@@ -19,10 +19,12 @@
     "mongoose": "^8.9.1",
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "pug": "^3.0.3"
   },
   "devDependencies": {
     "@types/express-session": "^1.18.1",
-    "@types/morgan": "^1.9.9"
+    "@types/morgan": "^1.9.9",
+    "@types/passport-local": "^1.0.38"
   }
 }

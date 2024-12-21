@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 
 exports.app = app;
 require("./config/session.config");
+require("./config/passport.config");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
