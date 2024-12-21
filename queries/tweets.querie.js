@@ -15,3 +15,8 @@ exports.deleteTweet = (tweetId) => {
 exports.updateTweet = (tweetId, tweet) => {
   return Tweet.findByIdAndUpdate(tweetId, {$set: tweet}, {runValidators: true}).exec();
 };
+
+exports.createTweet = (tweet) => {
+  const newTweet = new Tweet(tweet);
+  return newTweet.save();
+};

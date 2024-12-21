@@ -4,10 +4,14 @@ nav(class="navbar navbar-expand-sm navbar-light bg-light  px-5")
   button(class="navbar-toggler", type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
     span(class="navbar-toggler-icon")
   div(class="collapse navbar-collapse", id="navbarNav")
-    ul(class="navbar-nav ms-auto")
+  ul(class="navbar-nav ms-auto d-flex", style="gap: 15px;")
+    if isAuthenticated
       li(class="nav-item")
         a(class="btn btn-primary btn-tweet", href="/tweets/new") Tweet
       li(class="nav-item")
-        a(class="nav-link", href="/users/login") Login
+        a(class="nav-link", href="/auth/signout") Deconnexion
+    else
       li(class="nav-item")
-        a(class="nav-link", href="/users/signup/form") Register
+        a(class="nav-link", href="/auth/signin/form") Connexion
+      li(class="nav-item")
+        a(class="nav-link", href="/users/signup/form") Inscription

@@ -1,11 +1,21 @@
 const { get } = require("mongoose");
 const Tweet = require("../database/models/tweet.model");
-const { getAllTweets, deleteTweet, getTweetById, updateTweet } = require("../queries/tweets.querie");
+const {
+  getAllTweets,
+  deleteTweet,
+  getTweetById,
+  updateTweet,
+  createTweet,
+} = require("../queries/tweets.querie");
 
 exports.tweetList = async (req, res, next) => {
   try {
     const tweets = await getAllTweets();
-    res.render("tweets/tweet", { tweets });
+    res.render("tweets/tweet", {
+      tweets,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -13,7 +23,11 @@ exports.tweetList = async (req, res, next) => {
 
 exports.tweetNew = (req, res, next) => {
   try {
-    res.render("tweets/tweet-form", { tweet: {} });
+    res.render("tweets/tweet-form", {
+      tweet: {},
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }
@@ -22,8 +36,7 @@ exports.tweetNew = (req, res, next) => {
 exports.tweetCreate = async (req, res, next) => {
   try {
     const body = req.body;
-    const newTweet = new Tweet(body);
-    await newTweet.save();
+    await createTweet({ ...body, author: req.user.id });
     res.redirect("/tweets");
   } catch (e) {
     const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
@@ -47,7 +60,11 @@ exports.tweetEdit = async (req, res, next) => {
   try {
     const tweetId = req.params.tweetId;
     const tweet = await getTweetById(tweetId);
-    res.render("tweets/tweet-form", { tweet });
+    res.render("tweets/tweet-form", {
+      tweet,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   } catch (e) {
     next(e);
   }

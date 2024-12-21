@@ -5,6 +5,10 @@
   margin-right: auto;
 }
 
+body {
+  background-color: #e6ecf0;
+}
+
 .profile-container {
   max-width: 300px;
   width: 30%;
@@ -23,12 +27,19 @@
 .b2 {
   border: 1px solid rebeccapurple;
 }
-.tweet-container{
-  display: flex; 
+
+.tweet-container {
+  display: flex;
   max-width: 800px;
   margin: 50px auto 0 auto;
 }
+
 .card {
   max-width: 500px;
   padding: 10px;
 }
+
+li {
+  list-style: none;
+}
+
