@@ -1,5 +1,3 @@
-const { get } = require("mongoose");
-const Tweet = require("../database/models/tweet.model");
 const {
   getAllTweets,
   deleteTweet,
@@ -48,9 +46,7 @@ exports.tweetDelete = async (req, res, next) => {
   try {
     const tweetId = req.params.tweetId;
     await deleteTweet(tweetId);
-    const tweets = await getAllTweets();
-    res.render("tweets/tweet-list", { tweets });
-    res.end();
+    res.redirect("/tweets");
   } catch (e) {
     next(e);
   }
@@ -74,11 +70,10 @@ exports.tweetUpdate = async (req, res, next) => {
   const tweetId = req.params.tweetId;
   try {
     const body = req.body;
-    const tweet = await updateTweet(tweetId, body);
+    await updateTweet(tweetId, body);
     res.redirect("/tweets");
   } catch (e) {
     const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
-    const tweet = await updateTweet(tweetId, body);
-    res.status(400).render("tweets/tweet-form", { errors, tweet });
+    res.status(400).render("tweets/tweet-form", { errors });
   }
 };

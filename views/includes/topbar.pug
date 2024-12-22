@@ -1,17 +1,17 @@
-nav(class="navbar navbar-expand-sm navbar-light bg-light  px-5")
-  a(class="navbar-brand", href="/tweets") 
-    img(src="/img/icon-twitter.png", width="30", height="30", class="d-inline-block align-top", alt="")
-  button(class="navbar-toggler", type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
-    span(class="navbar-toggler-icon")
-  div(class="collapse navbar-collapse", id="navbarNav")
-  ul(class="navbar-nav ms-auto d-flex", style="gap: 15px;")
-    if isAuthenticated
-      li(class="nav-item")
-        a(class="btn btn-primary btn-tweet", href="/tweets/new") Tweet
-      li(class="nav-item")
-        a(class="nav-link", href="/auth/signout") Deconnexion
-    else
-      li(class="nav-item")
-        a(class="nav-link", href="/auth/signin/form") Connexion
-      li(class="nav-item")
-        a(class="nav-link", href="/users/signup/form") Inscription
+nav.navbar.navbar-expand-sm.navbar-light.bg-light.px-5
+  a.navbar-brand(href="/tweets") 
+    img(src="/img/icon-twitter.png", width="30", height="30", class="d-inline-block align-top", alt="Twitter Icon")
+  button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  div#navbarNav.collapse.navbar-collapse
+    ul.navbar-nav.ms-auto.d-flex(style="gap: 15px;")
+      if isAuthenticated
+        li.nav-item
+          a.btn.btn-primary.btn-tweet(href="/tweets/new") Tweet
+        li.nav-item
+          a.nav-link(href="/auth/signout") Déconnexion
+      else
+        li.nav-item
+          a.nav-link(href="/auth/signin/form") Connexion
+        li.nav-item
+          a.nav-link(href="/users/signup/form") Inscription

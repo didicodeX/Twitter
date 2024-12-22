@@ -1,1 +1,42 @@
-p profile
+div.profile-container.bg-white.mr-3.d-flex.flex-column.justify-content-center.align-items-center
+  div.d-flex.justify-content-center.align-items-center
+    img(src="https://www.svgrepo.com/show/486506/user-profile-filled.svg" class="img-fluid" alt="Profile Icon")
+  div
+    p= `${currentUser.username} (${currentUser.local.email})`
+  div(class="d-flex justify-content-center align-items-center gap-2 my-3")
+    div(class="flex-fill")
+      p 
+        strong Tweets 
+        br
+        span #{tweets.length}
+    div(class="flex-fill")
+      p 
+        strong Following 
+        br
+        span 5
+      //- | #{currentUser.following.length}
+    div(class="flex-fill")
+      p 
+        strong Followers 
+        br
+        span 8
+      //- | #{currentUser.followers.length}
+
+
+
+    //- a.btn.btn-primary(href="/auth/signout") Deconnexion
+    //- a.btn.btn-primary(href="/tweets/new") Tweet
+    //- a.btn.btn-primary(href="/users/profile") Profile
+
+
+//- if tweets
+//-   div(class="profile-container b1")
+//-     p #{tweets[0].author}
+
+//- https://www.svgrepo.com/show/486506/user-profile-filled.svg
+
+style. 
+  span {
+    font-weight: bold;
+    color: #1da1f2;
+  }

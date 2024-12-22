@@ -11,7 +11,7 @@ const {
 router.get("/", tweetList);
 router.get("/new", tweetNew);
 router.post("/", tweetCreate);
-router.delete("/:tweetId", tweetDelete);
+router.get("/delete/:tweetId", tweetDelete);
 router.post("/update/:tweetId", tweetUpdate);
 router.get("/edit/:tweetId", tweetEdit);
 

@@ -5,9 +5,9 @@
   margin-right: auto;
 }
 
-body {
+/* body {
   background-color: #e6ecf0;
-}
+} */
 
 .profile-container {
   max-width: 300px;
@@ -43,3 +43,6 @@ li {
   list-style: none;
 }
 
+.navbar{
+  border-bottom: 2px solid #e6ecf0;
+}

@@ -4,7 +4,7 @@ if tweets
           div(class="card__header")
             h5(class="card-title") Tweet #{i + 1}
           div(class="card__body")
-            p(class="card__text" tweetid=tweet._id) #{tweet.content} - #{tweet._id}
+            p(class="card__text" tweetid=tweet._id) #{tweet.content} - #{tweet.author}
           div(class="d-flex justify-content-end gap-2")
             a(class="btn btn-primary", href=`/tweets/edit/${tweet._id}`) edit
             a(class="btn btn-danger ", href=`/tweets/delete/${tweet._id}`)  Delete
