@@ -6,7 +6,7 @@ block content
     div(class="profile-container b2") 
       include ../includes/profile.pug
     div(class="flex-fill b2")
-      form(class="card" action= tweet._id ? `/tweets/update/${tweet._id}` : '/tweets' method="POST")
+      form(class="card w-50 mt-5" action= tweet._id ? `/tweets/update/${tweet._id}` : '/tweets' method="POST")
         div(class="card-header")
           h5(class="card-title")= tweet._id ? 'Edit Tweet' : 'New Tweet'
         div(class="card-body")

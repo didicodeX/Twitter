@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
   function bindTweet() {
     const elements = document.querySelectorAll('.btn-danger');
     const tweetContainer = document.querySelector('#tweet-list-container');
-    console.log(elements,tweetContainer);
   
     elements.forEach( e => {
       e.addEventListener('click', ($event) => {

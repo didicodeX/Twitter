@@ -1,6 +1,7 @@
 div.profile-container.bg-white.mr-3.d-flex.flex-column.justify-content-center.align-items-center
-  div.d-flex.justify-content-center.align-items-center
-    img(src="https://www.svgrepo.com/show/486506/user-profile-filled.svg" class="img-fluid" alt="Profile Icon")
+  form(id="form-container" class="d-flex.justify-content-center.align-items-center" action="/users/update/image" method="POST" enctype="multipart/form-data")
+    input(type="file" name="avatar" class="d-none" id="input-avatar")
+    img(src=currentUser.avatar class="img-fluid" alt="Profile Icon" )
   div
     p= `${currentUser.username} (${currentUser.local.email})`
   div(class="d-flex justify-content-center align-items-center gap-2 my-3")
@@ -39,4 +40,13 @@ style.
   span {
     font-weight: bold;
     color: #1da1f2;
+  }
+  img {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    &:hover{
+      transform: scale(1.05);
+    }
   }
