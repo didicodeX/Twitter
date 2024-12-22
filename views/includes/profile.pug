@@ -1,9 +1,9 @@
 div.profile-container.bg-white.mr-3.d-flex.flex-column.justify-content-center.align-items-center
   form(id="form-container" class="d-flex.justify-content-center.align-items-center" action="/users/update/image" method="POST" enctype="multipart/form-data")
     input(type="file" name="avatar" class="d-none" id="input-avatar")
-    img(src=currentUser.avatar class="img-fluid" alt="Profile Icon" )
+    img(src=user.avatar class="img-fluid rounded-circle" alt="Profile Icon" )
   div
-    p= `${currentUser.username} (${currentUser.local.email})`
+    p= `${user.username} (${user.local.email})`
   div(class="d-flex justify-content-center align-items-center gap-2 my-3")
     div(class="flex-fill")
       p 

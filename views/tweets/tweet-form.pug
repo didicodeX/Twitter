@@ -2,10 +2,8 @@ extends ../layout
 
 block content
   h1 Tweet Form
-  div(class="d-flex flex-row content b1 mx-auto")
-    div(class="profile-container b2") 
-      include ../includes/profile.pug
-    div(class="flex-fill b2")
+  div(class="d-flex flex-row justify-content-center")
+    div(class="flex-fill d-flex flex-row justify-content-center")
       form(class="card w-50 mt-5" action= tweet._id ? `/tweets/update/${tweet._id}` : '/tweets' method="POST")
         div(class="card-header")
           h5(class="card-title")= tweet._id ? 'Edit Tweet' : 'New Tweet'
