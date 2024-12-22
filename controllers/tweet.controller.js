@@ -6,7 +6,7 @@ const {
   createTweet,
   getCurrentUserTweetsWithFollowing,
   getUserTweetsFromUsername,
-} = require("../queries/tweets.querie");
+} = require("../queries/tweets.queries");
 
 exports.tweetList = async (req, res, next) => {
   try {

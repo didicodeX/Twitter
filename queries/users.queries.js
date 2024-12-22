@@ -42,3 +42,8 @@ exports.comparePassword = async (password) => {
     throw e;
   }
 };
+
+exports.findUserPerUsername = (username) => {
+  return User.findOne({ username }).exec();
+};
+
